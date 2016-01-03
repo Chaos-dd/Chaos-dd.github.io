@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://github.com/chaos-dd/chaos-dd.github.io/blob/master/output/'
+SITEURL = 'https://raw.githubusercontent.com/chaos-dd/chaos-dd.github.io/master/output'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
