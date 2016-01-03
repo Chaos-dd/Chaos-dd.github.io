@@ -1,4 +1,4 @@
-PY?=python3
+PY?=python
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -98,6 +98,9 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+github: publish
+	cd OUTPUTDIR ; git add . ;  git commit -am 'your comments' ; git push
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
